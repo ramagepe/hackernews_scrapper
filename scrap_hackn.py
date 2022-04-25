@@ -72,7 +72,7 @@ def page_by_page():
         res = requests.get(f'https://news.ycombinator.com/news?p={page_num}')
         data_list = sort_data(filter_news(res))
         for post in data_list:
-            webbrowser.open(post['link'])
+            # webbrowser.open(post['link'])
             log_scrapping(post)
         page_num += 1
 
@@ -91,7 +91,7 @@ def many_sorted(num_posts:int, last_page:int):
         current_page += 1
     data_list = sort_data(data_list)
     for i in range(1, num_posts+1):
-        webbrowser.open(data_list[i]['link'])
+        # webbrowser.open(data_list[i]['link'])
         log_scrapping(data_list[i])
 
 def log_error():
@@ -100,15 +100,19 @@ def log_error():
     print('\n\tall --> shows page by page')
     print('\tbest [num of posts] [num of pages] --> shows top [num of posts] from [num of pages] pages')
     print('\n\tExample 1 >> python scrap_hackn.py all')
-    print('\tExample 2 >> python scrap_hackn.py best 5')
+    print('\tExample 2 >> python scrap_hackn.py best 10 5')
 
 if __name__ == '__main__':
     try:
-        mode, top_best, num_pages = argv[1:]
+        mode = argv[1]
         if mode == 'all':
             page_by_page()
         elif mode == 'best':
-            many_sorted(int(top_best), int(num_pages))
+            try:
+                top_best, num_pages = argv[2:]
+                many_sorted(int(top_best), int(num_pages))
+            except IndexError:
+                log_error()
         else:
             log_error()
     except IndexError:
