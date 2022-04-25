@@ -15,3 +15,4 @@ The execution of the file must be followed by the 'best' flag, then the number o
 ```
 python hackernews_scrapper.py best 10 5
 ```
+May be translated to "show me the best 10 posts of the first 5 pages"
