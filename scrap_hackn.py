@@ -4,13 +4,11 @@ the posts with 100 points or higher, page by page
 and log filtered data in the terminal.
 """
 
-from curses.panel import top_panel
-from dataclasses import dataclass
 import webbrowser
+from sys import argv
 import requests
 from bs4 import BeautifulSoup
 from rich import print as printr
-from sys import argv
 
 
 def filter_news(response):
@@ -38,7 +36,7 @@ def package_data(titles, links, scores):
     """Recieves 3 cleaned types of data and chunk them into a curated list
 
     Args:
-        titles (list): list of post titles  
+        titles (list): list of post titles
         links (list): list of post links
         scores (list): list of post scores
 
@@ -72,7 +70,7 @@ def page_by_page():
         res = requests.get(f'https://news.ycombinator.com/news?p={page_num}')
         data_list = sort_data(filter_news(res))
         for post in data_list:
-            # webbrowser.open(post['link'])
+            webbrowser.open(post['link'])
             log_scrapping(post)
         page_num += 1
 
@@ -91,7 +89,7 @@ def many_sorted(num_posts:int, last_page:int):
         current_page += 1
     data_list = sort_data(data_list)
     for i in range(1, num_posts+1):
-        # webbrowser.open(data_list[i]['link'])
+        webbrowser.open(data_list[i]['link'])
         log_scrapping(data_list[i])
 
 def log_error():
@@ -109,7 +107,7 @@ if __name__ == '__main__':
             page_by_page()
         elif mode == 'best':
             try:
-                top_best, num_pages = argv[2:]
+                top_best, num_pages = argv[2], argv[3]
                 many_sorted(int(top_best), int(num_pages))
             except IndexError:
                 log_error()
