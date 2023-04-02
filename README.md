@@ -17,7 +17,7 @@ The execution of the file must be followed by the 'all' flag:
 ```
 poetry run python hackernews_scrapper.py all
 ```
-The 'all' flag will tell the program to open all >100 points news, page by page
+The 'all' flag will tell the program to open all posts with >100 points, page by page
 
 ### 2. By selection
 The execution of the file must be followed by the 'best' flag, then the number of posts to show and finally the number of pages to scrap:
