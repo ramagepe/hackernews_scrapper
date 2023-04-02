@@ -98,7 +98,7 @@ def many_sorted(num_posts: int, last_page: int):
         data_list += filter_news(res)
         current_page += 1
     data_list = sort_data(data_list)
-    for i in range(num_posts+1):
+    for i in range(num_posts):
         webbrowser.open(data_list[i]['link'])
         log_scrapping(data_list[i])
 
