@@ -1,8 +1,8 @@
 # HackerNews Posts Scrapper
 Scraps data from HakerNews (https://news.ycombinator.com/) and opens in browser the posts with 100 points or higher in two ways: 
 
-1. page by page 
-2. selecting the number of posts and pages to scrap 
+1. Page by page 
+2. Selecting the number of posts and pages to scrap 
 
 ## Before running
 [Install Poetry](https://python-poetry.org/docs/#installation) in your system of not already installed and then run:
