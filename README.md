@@ -5,7 +5,7 @@ Scraps data from HakerNews (https://news.ycombinator.com/) and opens in browser 
 2. Selecting the number of posts and pages to scrap 
 
 ## Before running
-[Install Poetry](https://python-poetry.org/docs/#installation) in your system of not already installed and then run:
+[Install Poetry](https://python-poetry.org/docs/#installation) in your system if not already installed and then run inside the project directory:
 ```
 poetry init
 ```
