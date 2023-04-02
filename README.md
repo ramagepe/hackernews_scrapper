@@ -9,6 +9,7 @@ Scraps data from HakerNews (https://news.ycombinator.com/) and opens in browser 
 ```
 poetry init
 ```
+This will install all the packages needed to run the script
 
 ## Application example
 ### 1. Page by page 
