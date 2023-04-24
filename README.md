@@ -1,5 +1,5 @@
 # HackerNews Posts Scrapper
-Scraps data from HakerNews (https://news.ycombinator.com/) and opens in browser the posts with 100 points or higher in two ways: 
+Scraps data from HackerNews (https://news.ycombinator.com/) and opens in browser the posts with 100 points or higher in two ways: 
 
 1. Page by page 
 2. Selecting the number of posts and pages to scrap 
