@@ -7,7 +7,7 @@ Scraps data from HackerNews (https://news.ycombinator.com/) and opens in browser
 ## Before running
 [Install Poetry](https://python-poetry.org/docs/#installation) in your system if not already installed and then run inside the project directory:
 ```
-poetry init
+poetry install --no-root
 ```
 This will install all the packages needed to run the script
 
